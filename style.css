@@ -1,0 +1,215 @@
+:root {
+    --text-color: #1a1a1a;
+    --bg-color: #ffffff;
+    --link-color: #2662d9;
+    --heading-color: #a84d2f;
+    font-size: 1.25em;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text-color: #e1e1e1;
+        --bg-color: #1a1a1a;
+        --link-color: #7aa2f7;
+        --heading-color: #ffb299;
+        font-size: 1.25em;
+    }
+}
+
+/* Base styles */
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+body {
+    /* font-family: "Noto Serif", system-ui, serif; */
+    font-family: "Noto Sans", system-ui, sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+    line-height: 1.6;
+    color: var(--text-color);
+    background: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    flex: 1 0 auto;
+    max-width: 65ch;
+    width: min(100% - 2rem, 65ch);
+    margin: 0 auto;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+h1, h2 {
+    font-family: "Noto Sans", system-ui, sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+h1 {
+    font-weight: 500;
+}
+
+h2 {
+    font-weight: 400;
+    color: var(--heading-color);
+}
+
+/* Content styles */
+p, li, a {
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    hyphens: auto;
+}
+
+section {
+    padding-bottom: 0.5rem;
+}
+
+/* Link styles */
+a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: dotted underline;
+}
+
+header a {
+    color: var(--text-color);
+}
+
+header a:hover {
+    text-decoration: none;
+}
+
+/* List and paragraph styles */
+.contact-list {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-list li {
+    margin-bottom: 1rem;
+    font-size: 1em;
+}
+
+p {
+    font-size: 1em;
+}
+
+/* Footer styles */
+footer {
+    flex-shrink: 0;
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+    font-size: 0.85em; /* Slightly reduced from body text */
+    color: var(--text-color);
+    opacity: 0.8;
+    background: var(--bg-color);
+}
+
+/* Responsive styles */
+/* Small devices (phones) */
+@media (max-width: 37.5em) { /* 600px */
+    .wrapper {
+        width: calc(100% - 1rem);
+        padding: 0.5rem;
+    }
+    
+    body {
+        font-size: 0.80em;
+    }
+    
+    h1 {
+        font-size: 1.75em;
+    }
+    
+    h2 {
+        font-size: 1.25em;
+    }
+}
+
+/* Medium devices (tablets) */
+@media (min-width: 37.5625em) and (max-width: 64em) { /* 601px to 1024px */
+    .wrapper {
+        width: min(100% - 3rem, 85ch);
+        padding: 1.5rem;
+    }
+    
+    body {
+        font-size: 0.90em;
+    }
+    
+    h1 {
+        font-size: 1.875em;
+    }
+    
+    h2 {
+        font-size: 1.375em;
+    }
+}
+
+/* Large devices (desktops) */
+@media (min-width: 64.0625em) { /* 1025px */
+    .wrapper {
+        padding: 2rem;
+    }
+}
+
+/* Print styles */
+@media print {
+    body {
+        padding: 0;
+        color: black;
+        background: white;
+    }
+
+    a {
+        color: black;
+        text-decoration: underline;
+    }
+
+    a[href^="http"]:after {
+        content: " (" attr(href) ")";
+        font-size: 0.9em;
+    }
+
+    footer {
+        position: fixed;
+        bottom: 0;
+        opacity: 1;
+    }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+@media (forced-colors: active) {
+    a {
+        background-color: ButtonFace;
+        color: ButtonText;
+    }
+}
